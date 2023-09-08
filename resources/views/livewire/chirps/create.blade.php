@@ -12,6 +12,8 @@ $store = function () {
     auth()->user()->chirps()->create($validated);
 
     $this->message = '';
+
+    $this->dispatch('chirp-created');
 };
 
 ?>
