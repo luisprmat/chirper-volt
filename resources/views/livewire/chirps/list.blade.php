@@ -31,7 +31,7 @@ $edit = fn (Chirp $chirp) => $this->editing = $chirp;
                 <div class="flex justify-between items-center">
                     <div>
                         <span class="text-gray-800 dark:text-gray-200">{{ $chirp->user->name }}</span>
-                        <small class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ $chirp->created_at->format('j M Y, g:i a') }}</small>
+                        <small class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ $chirp->created_at->isoFormat('D MMM YYYY, hh:mm a') }}</small>
                         @unless ($chirp->created_at->eq($chirp->updated_at))
                             <small class="text-sm text-gray-600 dark:text-gray-400"> &middot; {{ __('edited') }}</small>
                         @endunless
