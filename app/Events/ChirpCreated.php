@@ -3,9 +3,8 @@
 namespace App\Events;
 
 use App\Models\Chirp;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-// use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -30,7 +29,7 @@ class ChirpCreated implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new Channel('chirps'),
+            new PresenceChannel('chirps'),
         ];
     }
 }
