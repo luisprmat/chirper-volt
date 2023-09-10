@@ -15,6 +15,7 @@ on([
     'chirp-created' => $getChirps,
     'chirp-updated' => $getChirps,
     'chirp-edit-canceled' => fn () => $this->editing = null,
+    'echo-presence:chirps,ChirpCreated' => $getChirps,
 ]);
 
 $edit = fn (Chirp $chirp) => $this->editing = $chirp;
